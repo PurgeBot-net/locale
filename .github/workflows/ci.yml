@@ -8,30 +8,17 @@ on:
 
 permissions:
   contents: write
-  packages: write
   pull-requests: write
 
 jobs:
   build:
-    # For libraries: replace with build-library.yml and remove auto-tag and release jobs below.
-    uses: PurgeBot-net/workflows/.github/workflows/build-service.yml@main
-    with:
-      package_name: CHANGE_ME
+    uses: PurgeBot-net/workflows/.github/workflows/build-library.yml@main
     secrets: inherit
 
   auto-tag:
     if: github.event_name == 'push'
     needs: build
     uses: PurgeBot-net/workflows/.github/workflows/auto-tag.yml@main
-    secrets: inherit
-
-  release:
-    if: github.event_name == 'push'
-    needs: auto-tag
-    uses: PurgeBot-net/workflows/.github/workflows/release-service.yml@main
-    with:
-      package_name: CHANGE_ME
-      version: ${{ needs.auto-tag.outputs.version }}
     secrets: inherit
 
   auto-label:

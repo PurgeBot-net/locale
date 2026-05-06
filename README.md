@@ -1,24 +1,35 @@
-# template
+# locale
 
-GitHub template repository for [PurgeBot-net](https://github.com/PurgeBot-net) — provides consistent CI/CD, linting, and repo hygiene across all services.
+i18n library for PurgeBot. Embeds JSON translation files and exposes typed message keys that services use to look up translated strings.
 
 ## Usage
 
-When creating a new repository under `PurgeBot-net`, select this as the template. Then:
+```go
+import "github.com/PurgeBot-net/locale"
 
-1. Open `.github/workflows/ci.yml` and replace both `CHANGE_ME` occurrences with the service name (e.g. `interactions`).
-2. For **library repos** (no Docker image): swap `build-service.yml` → `build-library.yml` and remove the `auto-tag` and `release` jobs.
+// Look up a message in a given language, falling back to en-GB.
+locale.MsgPurgeAlreadyRunning.In(lang)
 
-That's it. The reusable workflows live in [PurgeBot-net/workflows](https://github.com/PurgeBot-net/workflows).
+// With fmt.Sprintf args:
+locale.MsgPurgeStatusFetching.In(lang, channelName)
+```
 
-## What you get
+`lang` is a BCP 47 tag (e.g. `"en-GB"`, `"de"`) — typically taken from the Discord interaction's guild or user locale.
 
-- **CI/CD** — on push to `main`: vet, test, build + push Docker image to ghcr.io, auto-tag with next patch version, create a PR in the docker repo to update the version
-- **Auto-labelling** — PRs are labelled by type (bug, feature, improvement, etc.)
-- **`.editorconfig`** — consistent formatting across editors
-- **`.gitignore`** — Go-specific, ignores `.env` but keeps `.env.example`
-- **`.golangci.yml`** — linter config with sensible defaults
-- **PR template** — type checklist, testing notes, and `go.mod` reminder
-- **CODEOWNERS** — auto-requests review from `@PurgeBot-net/devs`
-- **SECURITY.md** — responsible disclosure policy
-- **LICENSE** — MIT
+## Adding translations
+
+1. Add or update keys in `translations/en-GB.json` (the source file).
+2. Crowdin picks up the changes automatically via `crowdin.yml` and creates translation PRs for other locales.
+3. Add a typed constant in `messages.go` if introducing a new key.
+
+## Structure
+
+```
+translations/
+  en-GB.json   ← source (nested JSON, flattened to dot-keys at load time)
+  de.json      ← contributed via Crowdin
+  ...
+locale.go      ← embed + flatten + lookup logic
+messages.go    ← typed Message constants
+crowdin.yml    ← Crowdin source/translation path config
+```
