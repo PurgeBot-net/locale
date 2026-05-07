@@ -1,0 +1,74 @@
+{
+  "error": {
+    "guild_only": "This command can only be used within a server.",
+    "unauthorized": "You do not have permission to use this command.",
+    "internal": "Internal error. Please try again.",
+    "internal_start": "Internal error starting purge. Please try again.",
+    "unknown_subcommand": "Unknown subcommand."
+  },
+  "purge": {
+    "invalid_target": "Invalid target. Please select an option from the list.",
+    "already_running": "Another purge operation is already running in this server.",
+    "no_perms": "You need the Manage Messages permission to use this command.",
+    "invalid_regex": "Invalid regex pattern: %s",
+    "resolve_error": "Failed to resolve target: %s",
+    "missing_perms": "I'm missing required permissions: %s",
+    "missing_perms_channel": "I'm missing required permissions in: %s",
+    "in_progress": "# 🔄 Purge in Progress\n\nPurging messages in **%s**",
+    "status": {
+      "label": "**Status**\n%s",
+      "starting": "Starting purge operation...",
+      "fetching": "**📁 Processing: %s**\nFetching messages..."
+    },
+    "cancelled": {
+      "header": "# ⚠️ Operation Cancelled\n\nThe purge operation has been cancelled.",
+      "count": "\n\n**Messages deleted before cancellation:** %d"
+    },
+    "complete": {
+      "header": "# ✅ Purge Complete\n\nSuccessfully purged messages in **%s**",
+      "total_deleted": "**Total Messages Deleted:** %d",
+      "duration": "**Duration:** %.2f seconds",
+      "channels_processed": "**Channels Processed:** %d",
+      "channel_breakdown": "\n**Channel Breakdown**\n%s",
+      "skipped_channels": "\n**Skipped Channels**\n%s",
+      "channel_line": "• %s: %d messages",
+      "skipped_line": "• %s: %s"
+    }
+  },
+  "target": {
+    "server": "this server"
+  },
+  "cancel": {
+    "button": "Cancel",
+    "not_allowed": "You cannot cancel this operation.",
+    "requested": "# ⏳ Cancellation Requested\n\nThe purge operation will stop after the current batch."
+  },
+  "customize": {
+    "no_perms": "You need the Administrator permission to customize the bot.",
+    "saved": "Customization saved.",
+    "cleared": "Customization cleared."
+  },
+  "help": {
+    "header": "# PurgeBot\n\nPowerful message management for Discord servers.",
+    "commands": {
+      "title": "## Bot Commands",
+      "body": "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/customize`** ✨ — Customize the bot's appearance for this server"
+    },
+    "parameters": {
+      "title": "## Parameters",
+      "body": "**• target_id** — Where to purge (server/category/channel)\n**• days** — Time limit (1–30 days)\n**• include_threads** — Include messages from threads (default: false)\n**• include_bots** — Include bot messages (`role`, `everyone`, `inactive` only, default: false)\n**• user/role** — Target for specific commands"
+    },
+    "filtering": {
+      "title": "## Filtering",
+      "body": "**• filter** — Text or regex pattern to match messages\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• case_sensitive** — Make filter case-sensitive (default: false)\n\n-# Auto-detects regex patterns when filter_mode is not specified"
+    },
+    "permissions": {
+      "title": "## Required Permissions",
+      "body": "**Manage Messages** — To delete messages in channels\n**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n\n-# Users need **Manage Messages** permission to use purge commands."
+    },
+    "buttons": {
+      "invite": "Invite Bot",
+      "support": "Support"
+    }
+  }
+}
