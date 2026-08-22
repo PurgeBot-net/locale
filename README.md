@@ -20,4 +20,4 @@ locale.MsgPurgeStatusFetching.In(lang, channelName)
 
 1. Add or update keys in `translations/en-GB.json` (the source file).
 2. Crowdin picks up the changes automatically via `crowdin.yml` and creates translation PRs for other locales.
-3. Add a typed constant in `messages.go` if introducing a new key.
+3. Add a typed `Message` var in `messages.go` if introducing a new key.
