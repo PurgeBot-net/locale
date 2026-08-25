@@ -19,6 +19,7 @@ var (
 
 	// purge.*
 	MsgPurgeInvalidTarget       Message = "purge.invalid_target"
+	MsgPurgeInvalidMessageRef   Message = "purge.invalid_message_ref"
 	MsgPurgeAlreadyRunning      Message = "purge.already_running"
 	MsgPurgeNoPerms             Message = "purge.no_perms"
 	MsgPurgeInvalidRegex        Message = "purge.invalid_regex"

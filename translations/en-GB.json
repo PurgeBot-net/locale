@@ -9,6 +9,7 @@
 
   "purge": {
     "invalid_target":        "Invalid target. Please select an option from the list.",
+    "invalid_message_ref":   "Not a message ID or link: %s",
     "already_running":       "Another purge operation is already running in this server.",
     "no_perms":              "You need the Manage Messages permission to use this command.",
     "invalid_regex":         "Invalid regex pattern: %s",
@@ -90,7 +91,7 @@
 
     "filtering": {
       "title": "## Filtering",
-      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• skip_user** — Never delete this user's messages\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Auto-detects regex patterns when filter_mode is not specified"
+      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• skip_user** — Never delete this user's messages\n**• skip_messages** — Message links or IDs to never delete, comma-separated\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Auto-detects regex patterns when filter_mode is not specified"
     },
 
     "permissions": {
