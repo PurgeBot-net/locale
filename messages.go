@@ -51,9 +51,10 @@ var (
 	MsgTargetServer Message = "target.server"
 
 	// cancel.*
-	MsgCancelButton     Message = "cancel.button"
-	MsgCancelNotAllowed Message = "cancel.not_allowed"
-	MsgCancelRequested  Message = "cancel.requested"
+	MsgCancelButton         Message = "cancel.button"
+	MsgCancelNotAllowed     Message = "cancel.not_allowed"
+	MsgCancelRequested      Message = "cancel.requested"
+	MsgCancelNothingRunning Message = "cancel.nothing_running"
 
 	// customize.*
 	MsgCustomizeNoPerms   Message = "customize.no_perms"
