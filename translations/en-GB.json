@@ -81,7 +81,7 @@
 
     "commands": {
       "title": "## Bot Commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/customize`** ✨ — Customize the bot's appearance for this server"
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/customize`** ✨ — Customize the bot's appearance for this server"
     },
 
     "parameters": {
@@ -91,7 +91,7 @@
 
     "filtering": {
       "title": "## Filtering",
-      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Auto-detects regex patterns when filter_mode is not specified"
+      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern."
     },
 
     "permissions": {
