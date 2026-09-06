@@ -82,7 +82,7 @@
 
     "commands": {
       "title": "## Bot Commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a purge you started\n**`/customize`** ✨ — Customize the bot's appearance for this server"
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server"
     },
 
     "parameters": {
