@@ -26,6 +26,8 @@ var (
 	MsgPurgeResolveError        Message = "purge.resolve_error"
 	MsgPurgeMissingPerms        Message = "purge.missing_perms"
 	MsgPurgeMissingPermsChannel Message = "purge.missing_perms_channel"
+	MsgPurgeNoStatusChannel     Message = "purge.no_status_channel"
+	MsgPurgeNoStatusMessage     Message = "purge.no_status_message"
 	MsgPurgeInProgress          Message = "purge.in_progress"
 
 	// purge.status.*
@@ -46,6 +48,14 @@ var (
 	MsgPurgeCompleteSkippedChannels   Message = "purge.complete.skipped_channels"
 	MsgPurgeCompleteChannelLine       Message = "purge.complete.channel_line"
 	MsgPurgeCompleteSkippedLine       Message = "purge.complete.skipped_line"
+
+	// purge.dm.*
+	MsgPurgeDMHeader     Message = "purge.dm.header"
+	MsgPurgeDMCancelHint Message = "purge.dm.cancel_hint"
+
+	// purge.handover.*
+	MsgPurgeHandoverToDM        Message = "purge.handover.to_dm"
+	MsgPurgeHandoverUnreachable Message = "purge.handover.unreachable"
 
 	// target.*
 	MsgTargetServer Message = "target.server"

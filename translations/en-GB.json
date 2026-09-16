@@ -16,6 +16,8 @@
     "resolve_error":         "Failed to resolve target: %s",
     "missing_perms":         "I'm missing required permissions: %s",
     "missing_perms_channel": "I'm missing required permissions in: %s",
+    "no_status_channel":     "I'm missing %s in this channel, so I can't keep the status message updated here for the whole run. The purge still runs: this reply stays live for 15 minutes, and after that I'll continue in a direct message to you.",
+    "no_status_message":     "I'm missing %s in this channel, so I can't post a status message here. This reply is updated instead, and after 15 minutes the status continues in a direct message to you.",
     "in_progress":           "# 🔄 Purge in Progress\n\nPurging messages in **%s**",
 
     "status": {
@@ -38,6 +40,16 @@
       "skipped_channels":   "\n**Skipped Channels**\n%s",
       "channel_line":       "• %s: %d messages",
       "skipped_line":       "• %s: %s"
+    },
+
+    "dm": {
+      "header":      "Purge in **%s**. The status continues here because the message in the channel can no longer be updated.",
+      "cancel_hint": "To stop this purge, run `/cancel` in the server, or send `@PurgeBot stop` in a channel there."
+    },
+
+    "handover": {
+      "to_dm":       "I can no longer update this message. The rest of this purge is reported in a direct message to %s.",
+      "unreachable": "I can no longer update this message, and %s cannot be reached by direct message. The purge is still running; run `/cancel` in this server to stop it."
     }
   },
 
@@ -97,7 +109,7 @@
 
     "permissions": {
       "title": "## Required Permissions",
-      "body":  "**Manage Messages** — To delete messages in channels\n**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n\n-# Users need **Manage Messages** permission to use purge commands."
+      "body":  "**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n**Manage Messages** — To delete messages in channels\n**Send Messages** — To post progress updates where the command was run\n**Send Messages in Threads** — The same, inside a thread\n**Manage Threads** — To reach archived private threads\n**Connect** — To read the text chat in voice channels\n**Change Nickname** — For `/customize` to rename the bot per server\n\n-# Users need **Manage Messages** permission to use purge commands."
     },
 
     "buttons": {
