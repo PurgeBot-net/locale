@@ -1,3 +1,3 @@
 module github.com/PurgeBot-net/locale
 
-go 1.26
+go 1.26.0
