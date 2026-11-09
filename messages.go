@@ -48,6 +48,7 @@ var (
 	MsgPurgeCompleteSkippedChannels   Message = "purge.complete.skipped_channels"
 	MsgPurgeCompleteChannelLine       Message = "purge.complete.channel_line"
 	MsgPurgeCompleteSkippedLine       Message = "purge.complete.skipped_line"
+	MsgPurgeCompleteHiddenChannels    Message = "purge.complete.hidden_channels"
 
 	// purge.dm.*
 	MsgPurgeDMHeader     Message = "purge.dm.header"

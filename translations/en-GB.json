@@ -39,7 +39,8 @@
       "channel_breakdown":  "\n**Channel Breakdown**\n%s",
       "skipped_channels":   "\n**Skipped Channels**\n%s",
       "channel_line":       "• %s: %d messages",
-      "skipped_line":       "• %s: %s"
+      "skipped_line":       "• %s: %s",
+      "hidden_channels":    "-# Channels I can't view aren't purged and may not be listed above."
     },
 
     "dm": {
@@ -104,7 +105,7 @@
 
     "filtering": {
       "title": "## Filtering",
-      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern."
+      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• flagged_media** — Only delete messages with media Discord flagged as explicit, gore or self-harm\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern.\n-# flagged_media only finds media Discord has scanned, which depends on the server's explicit content filter."
     },
 
     "permissions": {
