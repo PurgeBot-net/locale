@@ -100,7 +100,7 @@
 
     "parameters": {
       "title": "## Parameters",
-      "body":  "**• target_id** — Where to purge (server/category/channel)\n**• days** — Time limit (1–30 days)\n**• include_threads** — Include messages from threads (default: false)\n**• include_bots** — Include bot messages (`role`, `everyone`, `inactive` only, default: false)\n**• user/role** — Target for specific commands"
+      "body":  "**• target** — Where to purge (server/category/channel)\n**• days** — Time limit (1–30 days)\n**• include_threads** — Include messages from threads (default: false)\n**• include_bots** — Include bot messages (`role`, `everyone`, `inactive` only, default: false)\n**• user/role** — Target for specific commands"
     },
 
     "filtering": {
