@@ -87,6 +87,12 @@ var (
 	MsgStatsTotals    Message = "stats.totals"
 	MsgStatsLastPurge Message = "stats.last_purge"
 	MsgStatsNoPurges  Message = "stats.no_purges"
+	MsgStatsOptedOut  Message = "stats.opted_out"
+
+	// settings.*
+	MsgSettingsNoPerms  Message = "settings.no_perms"
+	MsgSettingsStatsOff Message = "settings.stats_off"
+	MsgSettingsStatsOn  Message = "settings.stats_on"
 
 	// help.*
 	MsgHelpHeader Message = "help.header"

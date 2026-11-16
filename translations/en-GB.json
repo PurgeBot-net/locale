@@ -87,7 +87,14 @@
     "header":     "# 📊 Server Statistics",
     "totals":     "**Total Purge Operations:** %d\n**Messages Deleted:** %d",
     "last_purge": "**Last Purge:** %s",
-    "no_purges":  "No purges have been recorded yet."
+    "no_purges":  "No purges have been recorded yet.",
+    "opted_out":  "Stats are off for this server. An administrator can turn them on with `/settings stats:On`."
+  },
+
+  "settings": {
+    "no_perms":  "You need the Administrator permission to change PurgeBot's settings.",
+    "stats_off": "Stats are off. This server's purge stats were deleted and new purges won't be recorded.",
+    "stats_on":  "Stats are on. New purges are recorded from now on."
   },
 
   "help": {
@@ -95,7 +102,7 @@
 
     "commands": {
       "title": "## Bot Commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server"
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server\n**`/settings`** — Turn purge stats on or off for this server"
     },
 
     "parameters": {
