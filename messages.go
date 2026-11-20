@@ -14,7 +14,6 @@ var (
 	MsgErrorGuildOnly         Message = "error.guild_only"
 	MsgErrorNoAccess          Message = "error.no_access"
 	MsgErrorInternal          Message = "error.internal"
-	MsgErrorInternalStart     Message = "error.internal_start"
 	MsgErrorUnknownSubcommand Message = "error.unknown_subcommand"
 
 	// purge.*
@@ -28,6 +27,7 @@ var (
 	MsgPurgeNoStatusChannel     Message = "purge.no_status_channel"
 	MsgPurgeNoStatusMessage     Message = "purge.no_status_message"
 	MsgPurgeInProgress          Message = "purge.in_progress"
+	MsgPurgeNotStarted          Message = "purge.not_started"
 
 	// purge.status.*
 	MsgPurgeStatusLabel    Message = "purge.status.label"
@@ -47,6 +47,7 @@ var (
 	MsgPurgeCompleteSkippedChannels   Message = "purge.complete.skipped_channels"
 	MsgPurgeCompleteChannelLine       Message = "purge.complete.channel_line"
 	MsgPurgeCompleteSkippedLine       Message = "purge.complete.skipped_line"
+	MsgPurgeCompleteUndeleted         Message = "purge.complete.undeleted"
 	MsgPurgeCompleteHiddenChannels    Message = "purge.complete.hidden_channels"
 
 	// purge.dm.*
@@ -67,9 +68,11 @@ var (
 	MsgCancelNothingRunning Message = "cancel.nothing_running"
 
 	// customize.*
-	MsgCustomizeNoPremium Message = "customize.no_premium"
-	MsgCustomizeSaved     Message = "customize.saved"
-	MsgCustomizeCleared   Message = "customize.cleared"
+	MsgCustomizeNoPremium         Message = "customize.no_premium"
+	MsgCustomizeSaved             Message = "customize.saved"
+	MsgCustomizeCleared           Message = "customize.cleared"
+	MsgCustomizeAvatarInvalidType Message = "customize.avatar_invalid_type"
+	MsgCustomizeAvatarTooLarge    Message = "customize.avatar_too_large"
 
 	// skip_channels.*
 	MsgSkipChannelsPrompt   Message = "skip_channels.prompt"

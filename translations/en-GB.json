@@ -1,9 +1,8 @@
 {
   "error": {
     "guild_only":          "This command can only be used within a server.",
-    "no_access":           "### 🔒 No access\nOnly the server owner and roles granted with `/settings` can use PurgeBot. Ask the owner to give one of your roles access.\n-# You can still use `/help`, and `/cancel` stops a purge you started.",
+    "no_access":           "### No access\nOnly the server owner and roles granted with `/settings` can use PurgeBot. Ask the owner to give one of your roles access.\n-# You can still use `/help`, and `/cancel` stops a purge you started.",
     "internal":            "Internal error. Please try again.",
-    "internal_start":      "Internal error starting purge. Please try again.",
     "unknown_subcommand":  "Unknown subcommand."
   },
 
@@ -15,41 +14,43 @@
     "resolve_error":         "Failed to resolve target: %s",
     "missing_perms":         "I'm missing required permissions: %s",
     "missing_perms_channel": "I'm missing required permissions in: %s",
-    "no_status_channel":     "I'm missing %s in this channel, so I can't keep the status message updated here for the whole run. The purge still runs: this reply stays live for 15 minutes, and after that I'll continue in a direct message to you.",
-    "no_status_message":     "I'm missing %s in this channel, so I can't post a status message here. This reply is updated instead, and after 15 minutes the status continues in a direct message to you.",
-    "in_progress":           "# 🔄 Purge in Progress\n\nPurging messages in **%s**",
+    "no_status_channel":     "### Status updates limited\nI'm missing %s in this channel, so I can't keep the status message updated here for the whole run. The purge still runs: this reply stays live for 15 minutes, and after that I'll continue in a direct message to you.",
+    "no_status_message":     "### Status updates limited\nI'm missing %s in this channel, so I can't post a status message here. This reply is updated instead, and after 15 minutes the status continues in a direct message to you.",
+    "in_progress":           "### Purge in progress\nPurging messages in **%s**",
+    "not_started":           "### ❌ Purge couldn't start\n%s",
 
     "status": {
       "label":    "**Status**\n%s",
       "starting": "Starting purge operation...",
-      "fetching": "**📁 Processing: %s**\nFetching messages..."
+      "fetching": "Processing: %s\nFetching messages..."
     },
 
     "cancelled": {
-      "header": "# ⚠️ Operation Cancelled\n\nThe purge operation has been cancelled.",
-      "count":  "\n\n**Messages deleted before cancellation:** %d"
+      "header": "### 🛑 Purge cancelled",
+      "count":  "\n**Messages deleted before cancellation:** %d"
     },
 
     "complete": {
-      "header":             "# ✅ Purge Complete\n\nSuccessfully purged messages in **%s**",
-      "total_deleted":      "**Total Messages Deleted:** %d",
+      "header":             "### ✅ Purge complete\nPurged messages in **%s**",
+      "total_deleted":      "**Total messages deleted:** %d",
       "duration":           "**Duration:** %.2f seconds",
-      "channels_processed": "**Channels Processed:** %d",
-      "channel_breakdown":  "\n**Channel Breakdown**\n%s",
-      "skipped_channels":   "\n**Skipped Channels**\n%s",
+      "channels_processed": "**Channels processed:** %d",
+      "channel_breakdown":  "**Channel breakdown**\n%s",
+      "skipped_channels":   "**Skipped channels**\n%s",
       "channel_line":       "• %s: %d messages",
       "skipped_line":       "• %s: %s",
+      "undeleted":          "%d message(s) could not be deleted",
       "hidden_channels":    "-# Channels I can't view aren't purged and may not be listed above."
     },
 
     "dm": {
       "header":      "Purge in **%s**. The status continues here because the message in the channel can no longer be updated.",
-      "cancel_hint": "To stop this purge, run `/cancel` in the server, or send `@PurgeBot stop` in a channel there."
+      "cancel_hint": "-# To stop this purge, run `/cancel` in the server, or send `@PurgeBot stop` in a channel there."
     },
 
     "handover": {
-      "to_dm":       "I can no longer update this message. The rest of this purge is reported in a direct message to %s.",
-      "unreachable": "I can no longer update this message, and %s cannot be reached by direct message. The purge is still running; run `/cancel` in this server to stop it."
+      "to_dm":       "### Status moved to direct messages\nI can no longer update this message. The rest of this purge is reported in a direct message to %s.",
+      "unreachable": "### Status updates stopped\nI can no longer update this message, and %s cannot be reached by direct message. The purge is still running; run `/cancel` in this server to stop it."
     }
   },
 
@@ -60,74 +61,76 @@
   "cancel": {
     "button":          "Cancel",
     "not_allowed":     "You cannot cancel this operation.",
-    "requested":       "# ⏳ Cancellation Requested\n\nThe purge operation will stop after the current batch.",
+    "requested":       "### Cancellation requested\nThe purge stops after the current batch.",
     "nothing_running": "No purge is currently running in this server."
   },
 
   "customize": {
-    "no_premium": "This feature requires a Premium subscription.",
-    "saved":      "Customization saved.",
-    "cleared":    "Customization cleared."
+    "no_premium":          "This feature requires a Premium subscription.",
+    "saved":               "Customization saved.",
+    "cleared":             "Customization cleared.",
+    "avatar_invalid_type": "Invalid avatar type: `%s`. Allowed: JPG, PNG, GIF, WebP.",
+    "avatar_too_large":    "Avatar exceeds the 8 MB size limit."
   },
 
   "skip_channels": {
-    "prompt":   "Select channels to skip from this category. Leave empty to purge all channels.",
+    "prompt":   "### Skip channels\nSelect channels to skip from this category.\n-# Leave empty to purge all channels.",
     "continue": "Continue",
     "expired":  "Selection timed out. Please run the command again."
   },
 
   "welcome": {
-    "dm": "# 👋 Welcome to PurgeBot!\n\nThanks for adding me to **%s**!\n\nUse `/purge` to delete messages by user, role, or across channels and categories. Run `/help` for a full list of commands and options."
+    "dm": "### Welcome to PurgeBot\nThanks for adding me to **%s**!\nUse `/purge` to delete messages by user, role, or across channels and categories.\n-# Run `/help` for a full list of commands and options."
   },
 
   "stats": {
     "no_premium": "This feature requires a Premium subscription.",
-    "header":     "# 📊 Server Statistics",
-    "totals":     "**Total Purge Operations:** %d\n**Messages Deleted:** %d",
-    "last_purge": "**Last Purge:** %s",
+    "header":     "### Server statistics",
+    "totals":     "**Total purge operations:** %d\n**Messages deleted:** %d",
+    "last_purge": "**Last purge:** %s",
     "no_purges":  "No purges have been recorded yet.",
-    "opted_out":  "Stats are off for this server. Turn them back on with `/settings stats state:On`."
+    "opted_out":  "### Stats are off\nTurn them back on with `/settings stats state:On`."
   },
 
   "settings": {
-    "stats_off": "### 📊 Stats are off\nThis server's purge stats were deleted and new purges won't be recorded.",
-    "stats_on":  "### 📊 Stats are on\nNew purges will be recorded from now on.",
+    "stats_off": "### Stats are off\nThis server's purge stats were deleted and new purges won't be recorded.",
+    "stats_on":  "### Stats are on\nNew purges will be recorded from now on.",
 
     "access": {
-      "owner_only": "### 🔒 Server owner only\nOnly the server owner decides which roles get to use PurgeBot.\n-# You can still see the list with `/settings access list`.",
-      "everyone":   "### ⚠️ Pick a specific role\nThe everyone role can't be granted. Use the role your moderators have instead.",
-      "added":      "### ✅ Access granted\nMembers with %s can now use PurgeBot.\n-# Undo with `/settings access remove`.",
-      "removed":    "### 🚫 Access removed\nMembers with %s can no longer use PurgeBot.\n-# Anyone who also has another granted role still can.",
-      "list":       "## 🔐 Who can use PurgeBot\nThe server owner, plus members with these roles:\n%s\n-# Only the owner can add or remove roles.",
-      "list_empty": "## 🔐 Who can use PurgeBot\nJust the server owner for now. No roles have been added yet.\n-# The owner can add one with `/settings access add`."
+      "owner_only": "### Server owner only\nOnly the server owner decides which roles get to use PurgeBot.\n-# You can still see the list with `/settings access list`.",
+      "everyone":   "### Pick a specific role\nThe everyone role can't be granted. Use the role your moderators have instead.",
+      "added":      "### Access granted\nMembers with %s can now use PurgeBot.\n-# Undo with `/settings access remove`.",
+      "removed":    "### Access removed\nMembers with %s can no longer use PurgeBot.\n-# Anyone who also has another granted role still can.",
+      "list":       "### Who can use PurgeBot\nThe server owner, plus members with these roles:\n%s\n-# Only the owner can add or remove roles.",
+      "list_empty": "### Who can use PurgeBot\nJust the server owner for now. No roles have been added yet.\n-# The owner can add one with `/settings access add`."
     }
   },
 
   "help": {
-    "header": "# PurgeBot\n\nPowerful message management for Discord servers.",
+    "header": "## PurgeBot\nBulk message deletion for Discord servers.",
 
     "commands": {
-      "title": "## Bot Commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server\n**`/settings stats`** — Turn purge stats on or off for this server\n**`/settings access`** — See which roles can use PurgeBot; only the server owner can add or remove them"
+      "title": "### Bot commands",
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** — Customize the bot's appearance for this server (Premium)\n**`/settings stats`** — Turn purge stats on or off for this server\n**`/settings access`** — See which roles can use PurgeBot; only the server owner can add or remove them"
     },
 
     "parameters": {
-      "title": "## Parameters",
+      "title": "### Parameters",
       "body":  "**• target** — Where to purge (server/category/channel)\n**• days** — Time limit (1–30 days)\n**• include_threads** — Include messages from threads (default: false)\n**• include_bots** — Include bot messages (`role`, `everyone`, `inactive` only, default: false)\n**• user/role** — Target for specific commands"
     },
 
     "filtering": {
-      "title": "## Filtering",
-      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• flagged_media** — Only delete messages with media Discord flagged as explicit, gore or self-harm\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern.\n-# flagged_media only finds media Discord has scanned, which depends on the server's explicit content filter."
+      "title": "### Filtering",
+      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• flagged_media** — Only delete messages with media Discord flagged as explicit, gore or self-harm\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern.\n-# flagged_media only finds media Discord has scanned, which depends on the server's explicit content filter."
     },
 
     "permissions": {
-      "title": "## Required Permissions",
-      "body":  "**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n**Manage Messages** — To delete messages in channels\n**Send Messages** — To post progress updates where the command was run\n**Send Messages in Threads** — The same, inside a thread\n**Manage Threads** — To reach archived private threads\n**Connect** — To read the text chat in voice channels\n**Change Nickname** — For `/customize` to rename the bot per server\n\n-# Only the server owner and roles granted with `/settings access add` can use PurgeBot. Anyone can use `/help`, and the person who started a purge (or the owner) can always stop it with `/cancel`."
+      "title": "### Required permissions",
+      "body":  "**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n**Manage Messages** — To delete messages in channels\n**Send Messages** — To post progress updates where the command was run\n**Send Messages in Threads** — The same, inside a thread\n**Manage Threads** — To reach archived private threads\n**Connect** — To read the text chat in voice channels\n**Change Nickname** — For `/customize` to rename the bot per server\n-# Only the server owner and roles granted with `/settings access add` can use PurgeBot. Anyone can use `/help`, and the person who started a purge (or the owner) can always stop it with `/cancel`."
     },
 
     "buttons": {
-      "invite":  "Invite Bot",
+      "invite":  "Invite bot",
       "support": "Support"
     }
   }
