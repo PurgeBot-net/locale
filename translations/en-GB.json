@@ -1,7 +1,7 @@
 {
   "error": {
     "guild_only":          "This command can only be used within a server.",
-    "unauthorized":        "You do not have permission to use this command.",
+    "no_access":           "### 🔒 No access\nOnly the server owner and roles granted with `/settings` can use PurgeBot. Ask the owner to give one of your roles access.\n-# You can still use `/help`, and `/cancel` stops a purge you started.",
     "internal":            "Internal error. Please try again.",
     "internal_start":      "Internal error starting purge. Please try again.",
     "unknown_subcommand":  "Unknown subcommand."
@@ -11,7 +11,6 @@
     "invalid_target":        "Invalid target. Please select an option from the list.",
     "invalid_message_ref":   "Not a message ID or link: %s",
     "already_running":       "Another purge operation is already running in this server.",
-    "no_perms":              "You need the Manage Messages permission to use this command.",
     "invalid_regex":         "Invalid regex pattern: %s",
     "resolve_error":         "Failed to resolve target: %s",
     "missing_perms":         "I'm missing required permissions: %s",
@@ -66,7 +65,6 @@
   },
 
   "customize": {
-    "no_perms":   "You need the Administrator permission to customize the bot.",
     "no_premium": "This feature requires a Premium subscription.",
     "saved":      "Customization saved.",
     "cleared":    "Customization cleared."
@@ -88,13 +86,21 @@
     "totals":     "**Total Purge Operations:** %d\n**Messages Deleted:** %d",
     "last_purge": "**Last Purge:** %s",
     "no_purges":  "No purges have been recorded yet.",
-    "opted_out":  "Stats are off for this server. An administrator can turn them on with `/settings stats:On`."
+    "opted_out":  "Stats are off for this server. Turn them back on with `/settings stats state:On`."
   },
 
   "settings": {
-    "no_perms":  "You need the Administrator permission to change PurgeBot's settings.",
-    "stats_off": "Stats are off. This server's purge stats were deleted and new purges won't be recorded.",
-    "stats_on":  "Stats are on. New purges are recorded from now on."
+    "stats_off": "### 📊 Stats are off\nThis server's purge stats were deleted and new purges won't be recorded.",
+    "stats_on":  "### 📊 Stats are on\nNew purges will be recorded from now on.",
+
+    "access": {
+      "owner_only": "### 🔒 Server owner only\nOnly the server owner decides which roles get to use PurgeBot.\n-# You can still see the list with `/settings access list`.",
+      "everyone":   "### ⚠️ Pick a specific role\nThe everyone role can't be granted. Use the role your moderators have instead.",
+      "added":      "### ✅ Access granted\nMembers with %s can now use PurgeBot.\n-# Undo with `/settings access remove`.",
+      "removed":    "### 🚫 Access removed\nMembers with %s can no longer use PurgeBot.\n-# Anyone who also has another granted role still can.",
+      "list":       "## 🔐 Who can use PurgeBot\nThe server owner, plus members with these roles:\n%s\n-# Only the owner can add or remove roles.",
+      "list_empty": "## 🔐 Who can use PurgeBot\nJust the server owner for now. No roles have been added yet.\n-# The owner can add one with `/settings access add`."
+    }
   },
 
   "help": {
@@ -102,7 +108,7 @@
 
     "commands": {
       "title": "## Bot Commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server\n**`/settings`** — Turn purge stats on or off for this server"
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** ✨ — Customize the bot's appearance for this server\n**`/settings stats`** — Turn purge stats on or off for this server\n**`/settings access`** — See which roles can use PurgeBot; only the server owner can add or remove them"
     },
 
     "parameters": {
@@ -117,7 +123,7 @@
 
     "permissions": {
       "title": "## Required Permissions",
-      "body":  "**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n**Manage Messages** — To delete messages in channels\n**Send Messages** — To post progress updates where the command was run\n**Send Messages in Threads** — The same, inside a thread\n**Manage Threads** — To reach archived private threads\n**Connect** — To read the text chat in voice channels\n**Change Nickname** — For `/customize` to rename the bot per server\n\n-# Users need **Manage Messages** permission to use purge commands."
+      "body":  "**View Channel** — To access channels for purging\n**Read Message History** — To fetch existing messages\n**Manage Messages** — To delete messages in channels\n**Send Messages** — To post progress updates where the command was run\n**Send Messages in Threads** — The same, inside a thread\n**Manage Threads** — To reach archived private threads\n**Connect** — To read the text chat in voice channels\n**Change Nickname** — For `/customize` to rename the bot per server\n\n-# Only the server owner and roles granted with `/settings access add` can use PurgeBot. Anyone can use `/help`, and the person who started a purge (or the owner) can always stop it with `/cancel`."
     },
 
     "buttons": {

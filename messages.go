@@ -12,7 +12,7 @@ func (m Message) In(lang string, args ...any) string {
 var (
 	// error.*
 	MsgErrorGuildOnly         Message = "error.guild_only"
-	MsgErrorUnauthorized      Message = "error.unauthorized"
+	MsgErrorNoAccess          Message = "error.no_access"
 	MsgErrorInternal          Message = "error.internal"
 	MsgErrorInternalStart     Message = "error.internal_start"
 	MsgErrorUnknownSubcommand Message = "error.unknown_subcommand"
@@ -21,7 +21,6 @@ var (
 	MsgPurgeInvalidTarget       Message = "purge.invalid_target"
 	MsgPurgeInvalidMessageRef   Message = "purge.invalid_message_ref"
 	MsgPurgeAlreadyRunning      Message = "purge.already_running"
-	MsgPurgeNoPerms             Message = "purge.no_perms"
 	MsgPurgeInvalidRegex        Message = "purge.invalid_regex"
 	MsgPurgeResolveError        Message = "purge.resolve_error"
 	MsgPurgeMissingPerms        Message = "purge.missing_perms"
@@ -68,7 +67,6 @@ var (
 	MsgCancelNothingRunning Message = "cancel.nothing_running"
 
 	// customize.*
-	MsgCustomizeNoPerms   Message = "customize.no_perms"
 	MsgCustomizeNoPremium Message = "customize.no_premium"
 	MsgCustomizeSaved     Message = "customize.saved"
 	MsgCustomizeCleared   Message = "customize.cleared"
@@ -90,9 +88,16 @@ var (
 	MsgStatsOptedOut  Message = "stats.opted_out"
 
 	// settings.*
-	MsgSettingsNoPerms  Message = "settings.no_perms"
 	MsgSettingsStatsOff Message = "settings.stats_off"
 	MsgSettingsStatsOn  Message = "settings.stats_on"
+
+	// settings.access.*
+	MsgSettingsAccessOwnerOnly Message = "settings.access.owner_only"
+	MsgSettingsAccessEveryone  Message = "settings.access.everyone"
+	MsgSettingsAccessAdded     Message = "settings.access.added"
+	MsgSettingsAccessRemoved   Message = "settings.access.removed"
+	MsgSettingsAccessList      Message = "settings.access.list"
+	MsgSettingsAccessListEmpty Message = "settings.access.list_empty"
 
 	// help.*
 	MsgHelpHeader Message = "help.header"
