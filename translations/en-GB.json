@@ -3,7 +3,8 @@
     "guild_only":          "This command can only be used within a server.",
     "no_access":           "### No access\nOnly the server owner and roles granted with `/settings` can use PurgeBot. Ask the owner to give one of your roles access.\n-# You can still use `/help`, and `/cancel` stops a purge you started.",
     "internal":            "Internal error. Please try again.",
-    "unknown_subcommand":  "Unknown subcommand."
+    "unknown_subcommand":  "Unknown subcommand.",
+    "no_premium":          "This feature requires a Premium subscription."
   },
 
   "purge": {
@@ -66,7 +67,6 @@
   },
 
   "customize": {
-    "no_premium":          "This feature requires a Premium subscription.",
     "saved":               "Customization saved.",
     "cleared":             "Customization cleared.",
     "avatar_invalid_type": "Invalid avatar type: `%s`. Allowed: JPG, PNG, GIF, WebP.",
@@ -84,7 +84,6 @@
   },
 
   "stats": {
-    "no_premium": "This feature requires a Premium subscription.",
     "header":     "### Server statistics",
     "totals":     "**Total purge operations:** %d\n**Messages deleted:** %d",
     "last_purge": "**Last purge:** %s",
@@ -97,7 +96,7 @@
     "stats_on":  "### Stats are on\nNew purges will be recorded from now on.",
 
     "access": {
-      "owner_only": "### Server owner only\nOnly the server owner decides which roles get to use PurgeBot.\n-# You can still see the list with `/settings access list`.",
+      "owner_only": "### Server owner only\nOnly the server owner decides which roles get to use PurgeBot.\n-# Members with access can see the list with `/settings access list`.",
       "everyone":   "### Pick a specific role\nThe everyone role can't be granted. Use the role your moderators have instead.",
       "added":      "### Access granted\nMembers with %s can now use PurgeBot.\n-# Undo with `/settings access remove`.",
       "removed":    "### Access removed\nMembers with %s can no longer use PurgeBot.\n-# Anyone who also has another granted role still can.",
@@ -111,7 +110,7 @@
 
     "commands": {
       "title": "### Bot commands",
-      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** — Customize the bot's appearance for this server (Premium)\n**`/settings stats`** — Turn purge stats on or off for this server\n**`/settings access`** — See which roles can use PurgeBot; only the server owner can add or remove them"
+      "body":  "**`/purge user`** — Delete messages from a specific user\n**`/purge role`** — Delete messages from role members\n**`/purge everyone`** — Clear all messages (channel/category only)\n**`/purge bot`** — Delete messages from bot accounts\n**`/purge inactive`** — Remove messages from ex-members\n**`/purge webhook`** — Delete messages sent by webhooks\n**`/purge deleted`** — Clean up deleted account messages\n**`/cancel`** — Cancel a running purge\n**`/customize`** — Customize the bot's appearance for this server (Premium)\n**`/stats`** — View purge statistics for this server (Premium)\n**`/settings stats`** — Turn purge stats on or off for this server\n**`/settings access`** — See which roles can use PurgeBot; only the server owner can add or remove them"
     },
 
     "parameters": {
@@ -121,7 +120,7 @@
 
     "filtering": {
       "title": "### Filtering",
-      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• flagged_media** — Only delete messages with media Discord flagged as explicit, gore or self-harm\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern.\n-# flagged_media only finds media Discord has scanned, which depends on the server's explicit content filter."
+      "body":  "**• filter** — Text or regex pattern to match message text or attachments\n**• filter_mode** — How to match (`contains`/`regex`/`exact`/`starts_with`/`ends_with`)\n**• filter_keep** — Keep what the filter matches and delete everything else\n**• case_sensitive** — Make filter case-sensitive (default: false)\n**• flagged_media** — Only delete messages with media Discord flagged as explicit, gore or self-harm\n**• skip_user** — Never delete this user's messages (`role`/`everyone`/`bot`/`inactive` only)\n**• skip_messages** — Message links or IDs to never delete, separated by commas or spaces\n**• skip_channels** — Choose channels to skip (category only)\n-# The filter also matches attachment filenames and types, so `filter:\\.mp4$` with `regex` reaches uploads.\n-# Without filter_mode the filter is a plain substring match, not a pattern.\n-# flagged_media only finds media Discord has scanned, which depends on the server's explicit content filter."
     },
 
     "permissions": {

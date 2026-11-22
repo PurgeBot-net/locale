@@ -3,7 +3,9 @@ package locale
 import (
 	"embed"
 	"encoding/json"
-	"fmt"
+	"maps"
+	"slices"
+	"strings"
 )
 
 //go:embed translations/*.json
@@ -29,6 +31,17 @@ func init() {
 		flatten("", raw, flat)
 		translations[lang] = flat
 	}
+	aliasBaseTags(translations)
+}
+
+// Crowdin names files language-REGION (en-GB) while Discord sends most locales bare.
+func aliasBaseTags(t map[string]map[string]string) {
+	for _, tag := range slices.Sorted(maps.Keys(t)) {
+		base, _, ok := strings.Cut(tag, "-")
+		if _, exists := t[base]; ok && !exists {
+			t[base] = t[tag]
+		}
+	}
 }
 
 func flatten(prefix string, m map[string]any, out map[string]string) {
@@ -44,16 +57,6 @@ func flatten(prefix string, m map[string]any, out map[string]string) {
 			flatten(key, val, out)
 		}
 	}
-}
-
-// T returns the translation for the dotted key in the given language, falling back to en-GB.
-// Additional args are passed to fmt.Sprintf.
-func T(lang string, key Message, args ...any) string {
-	msg := lookup(lang, string(key))
-	if len(args) == 0 {
-		return msg
-	}
-	return fmt.Sprintf(msg, args...)
 }
 
 func lookup(lang, key string) string {

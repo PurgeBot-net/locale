@@ -1,20 +1,27 @@
 package locale
 
-// Message is a typed locale key. Use the vars below instead of raw strings.
+import "fmt"
+
+// Message is a typed locale key. Use the constants below instead of raw strings.
 type Message string
 
-// In returns the translation for this message in the given language.
+// In returns the translation for this message in the given language, falling back to en-GB.
 // Additional args are passed to fmt.Sprintf.
 func (m Message) In(lang string, args ...any) string {
-	return T(lang, m, args...)
+	msg := lookup(lang, string(m))
+	if len(args) == 0 {
+		return msg
+	}
+	return fmt.Sprintf(msg, args...)
 }
 
-var (
+const (
 	// error.*
 	MsgErrorGuildOnly         Message = "error.guild_only"
 	MsgErrorNoAccess          Message = "error.no_access"
 	MsgErrorInternal          Message = "error.internal"
 	MsgErrorUnknownSubcommand Message = "error.unknown_subcommand"
+	MsgErrorNoPremium         Message = "error.no_premium"
 
 	// purge.*
 	MsgPurgeInvalidTarget       Message = "purge.invalid_target"
@@ -68,7 +75,6 @@ var (
 	MsgCancelNothingRunning Message = "cancel.nothing_running"
 
 	// customize.*
-	MsgCustomizeNoPremium         Message = "customize.no_premium"
 	MsgCustomizeSaved             Message = "customize.saved"
 	MsgCustomizeCleared           Message = "customize.cleared"
 	MsgCustomizeAvatarInvalidType Message = "customize.avatar_invalid_type"
@@ -83,7 +89,6 @@ var (
 	MsgWelcomeDM Message = "welcome.dm"
 
 	// stats.*
-	MsgStatsNoPremium Message = "stats.no_premium"
 	MsgStatsHeader    Message = "stats.header"
 	MsgStatsTotals    Message = "stats.totals"
 	MsgStatsLastPurge Message = "stats.last_purge"

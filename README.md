@@ -14,10 +14,10 @@ locale.MsgPurgeAlreadyRunning.In(lang)
 locale.MsgPurgeStatusFetching.In(lang, channelName)
 ```
 
-`lang` is a BCP 47 tag (e.g. `"en-GB"`, `"de"`) — typically taken from the Discord interaction's guild or user locale.
+`lang` is a BCP 47 tag (e.g. `"en-GB"`, `"de"`), typically taken from the Discord interaction's guild or user locale. A region-tagged file such as `en-GB.json` also answers the bare tag `en`, unless an `en.json` exists.
 
 ## Adding translations
 
 1. Add or update keys in `translations/en-GB.json` (the source file).
 2. Crowdin picks up the changes automatically via `crowdin.yml` and creates translation PRs for other locales.
-3. Add a typed `Message` var in `messages.go` if introducing a new key.
+3. Add a typed `Message` constant in `messages.go` if introducing a new key.
